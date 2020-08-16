@@ -1,0 +1,107 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html,
+body {
+  background-color: #888;
+  font-family: "Libre Baskerville", serif;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
+  @include flexCenter();
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: minmax(30vw, auto) minmax(30vw, auto);
+  grid-auto-rows: minmax(100px, auto);
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.gridItem {
+  border: solid black 2px;
+  background-color: #faebd7;
+  width: 100%;
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination {
+  width: 20vw;
+  display: flex;
+  margin: 40px 10px;
+}
+
+.page {
+  min-width: 25px;
+  min-height: 25px;
+  @include flexCenter();
+  background-color: #add8e6;
+  margin-left: 2px;
+  border: black solid 2px;
+  border-radius: 7px;
+  &:hover {
+    cursor: pointer;
+    background-color: #b0c4de;
+  }
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+#userTitle {
+  height: 20px;
+  border: #a0522d solid 4px;
+}
+
+.btn {
+  border: none;
+  margin-left: 20px;
+  background-color: #f0e68c;
+  width: 100px;
+  height: 25px;
+  font-weight: 600;
+  &:hover {
+    cursor: pointer;
+    background-color: #fdf5e6;
+  }
+}
+
+#backBtn {
+  margin-top: 30px;
+}
+
+#movieInfo {
+  @include flexCenter();
+  flex-direction: column;
+}
+
+.title {
+  width: 30%;
+  color: #5f9ea0;
+  &:hover {
+    cursor: pointer;
+    background-color: #e0ffff;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    height: 120vh;
+    font-size: small;
+  }
+  .gridContainer {
+    grid-template-columns: 70vw;
+    grid-auto-columns: auto;
+    grid-auto-rows: minmax(50px, auto);
+  }
+}
