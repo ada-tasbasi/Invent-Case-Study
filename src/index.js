@@ -16,7 +16,7 @@ const isLoaded = (state = false, action) => {
 const apiTitleUrl = (state = "", action) => {
   switch (action.type) {
     case "TITLE":
-      return `http://www.omdbapi.com/?apikey=4c929216&s=${action.payload}`;
+      return `http://www.omdbapi.com/?apikey=xxxxxxxxs=${action.payload}`;
     default:
       return state;
   }
